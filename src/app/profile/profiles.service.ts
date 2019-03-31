@@ -4,6 +4,24 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ProfilesService {
+  private username: string;
+  private clientid = '';
+  private clientsecret = '';
 
-  constructor(public username:string) { }
+  constructor(private http: Http) {
+    this.username = 'augustineochieng';
+  }
+  getProfileInfo() {
+    return this.http.get('https://api.github.com/users/' + this.username + '?client_id=' + this.clientid + '&client_secret=' + this.clientsecret)
+      .map(res => res.json());
+  }
+
+  // getProfileRepos() {
+  //   return this.http.get('https://api.github.com/users/' + this.username + '/repos?client_id=' + this.clientid + '&client_secret=' + this.clientsecret)
+  //     .map(res => res.json());
+  // }
+
+  updateProfile(username: string) {
+    this.username = username;
+  }
 }
