@@ -8,7 +8,7 @@ export class ProfilesService {
   private clientid = '';
   private clientsecret = '';
 
-  constructor(private http: Http) {
+  constructor(private) {
     this.username = 'augustineochieng';
   }
   getProfileInfo() {
