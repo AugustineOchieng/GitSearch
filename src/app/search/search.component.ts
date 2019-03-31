@@ -16,8 +16,8 @@ export class SearchComponent implements OnInit {
   constructor(private profileService:ProfilesService, private repositoryService:RepositoriesService) { }
   findProfile() {
     this.profileService.updateProfile(this.username);
-    this.profileService.getProfileInfo().subscribe(profile => { this.findProfile.profile = profile; });
-    this.repositoryService.getRepositoryRepos().subscribe(repos => { this.repos; });
+    // this.profileService.getProfileInfo().subscribe(profile => { this.findProfile.profile = profile; });
+    // this.repositoryService.getRepositoryRepos().subscribe(repos => { this.repos; });
 }
   ngOnInit() {
   
