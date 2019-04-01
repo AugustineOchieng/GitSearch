@@ -24,9 +24,9 @@
 
 // }
 import { Component, OnInit } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { ProfilesService } from '../profile/profiles.service';
-import { RepositoriesService } from '../repository/repositories.service';
+// import { HttpClientModule } from '@angular/common/http';
+// import { ProfilesService } from '../profile/profiles.service';
+// import { RepositoriesService } from '../repository/repositories.service';
 
 @Component({
   selector: 'app-profile',
@@ -42,19 +42,11 @@ export class SearchComponent implements OnInit {
 
   username: string;
 
-  constructor(private profileService: ProfilesService, public http: HttpClientModule) {}
-
-  findProfile() {
-    this.profileService.updateProfile(this.username);
-
-    this.profileService.getProfileInfo().subscribe(profile => {
-      this.profile = profile;
-    });
-
-    // this.profileService.getProfileRepos().subscribe(repos => {
-    //   this.repos = repos;
-    // });
+  constructor() {
+    console.log("GitSearch")
   }
+
+  
 
   ngOnInit() {}
 }
