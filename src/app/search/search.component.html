@@ -1,84 +1,155 @@
+<body>
+<nav class="navbar navbar-inverse dusty-grass-gradient">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+
+      <a class="navbar-brand" href="#">GitSearch</a>
+    </div>
+    <form class="form-inline">
+      <div class="md-form input-group my-0">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon11">@</span>
+        </div>
+        <input type="text" class="form-control" placeholder={{user.login}} aria-label="Username"
+          aria-describedby="basic-addon11">
+      </div>
+    </form>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a routerLink='/search' routerLinkActive='active'>Search</a></li>
+
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+<ng-progress></ng-progress>
+
+<br>
 
 <div class="container">
-<ng-progress></ng-progress>
-  <form>
- <form class="form-inline md-form mr-auto mb-4">
-   <input class="form-control mr-sm-2" type="text" placeholder="Search" [(ngModel)]="username" aria-label="Search"
-     name="username">
-  </form>
 
-<a class="btn-floating btn-lg btn-floating peach-gradient" (click)='searcher()'><i class="fas fa-search"></i></a>
+  <form class="search-form">
 
-<div class="panel panel-default">
+    <div class="form-group">
 
-  <div class="panel-heading">
+      <span class="input">
 
-    <button class="btn aqua-gradient">{{user.name}} <small>{{user.login}}</small></button>
+        
+<form class="form-inline md-form mr-auto mb-4">
+  <input class="form-control mr-sm-2" type="text" placeholder="Search" [(ngModel)]="username" aria-label="Search"
+    name="username">
+  
+</form>
 
-
-
-    {{user.location}}
-
-  </div>
-
-  <div class="panel-body">
-
-    <div class="row">
-
-      <div class="col-sm-3">
+      </span>
+    
 
 
-        <div class="card card-cascade narrower">
+    </div>
+    <a class="btn-floating btn-lg btn-floating peach-gradient" (click)='searcher()'><i class="fas fa-search"></i></a>
+  </form><br><br>
 
-          <div class="view view-cascade">
-            <img src="{{user.avatar_url}}" class="card-img-top" alt="photo">
-            <a>
-              <div class="mask img-gradient"></div>
-            </a>
-          </div>
+ <hr>
 
+    <div class="panel panel-default">
 
+      <div class="panel-heading">
 
-          <div class="card-body card-body-cascade">
-            <h5> {{user.login}}</h5>
+        <button class="btn aqua-gradient"> <small>{{user.login}}</small></button>
 
+       
 
-            <h4 class="card-title"></h4>
+        {{user.location}}
 
-            <p class="card-text">{{user.bio}}</p>
-            <a class="btn btn-unique waves-effect waves-light" href="{{ user.html_url}}" target="_blank"
-              class="btn btn-success btn-sm">View profile on github</a>
-
-          </div>
-
-
-        </div>
       </div>
-                    <p>
-                      <button type="button" class="btn btn-primary btn-rounded">{{user.followers}}
-                        Followers</button><br>
-                      <button type="button" class="btn btn-default btn-rounded">Following
-                        {{user.following}}</button><br>
-                      <button type="button" class="btn btn-secondary btn-rounded">{{user.public_gists}} Public
-                        gists</button><br>
-                      <button type="button" class="btn btn-secondary btn-rounded">{{user.public_repos}} Public
-                        Repos</button><br>
 
+      <div class="panel-body">
 
-                    </p>
-<p><a href="{{ user.html_url}}" target="_blank" class="btn btn-success btn-sm">View profile on
-    github</a></p>
+        <div class="row">
 
-                  <h3 class="panel-title">Repository</h3>
+          <div class="col-sm-3">
 
+            
+<div class="card card-cascade narrower">
 
+  <!--Card image-->
+  <div class="view view-cascade">
+    <img src="{{user.avatar_url}}" class="card-img-top" alt="photo">
+    <a>
+      <div class="mask img-gradient"></div>
+    </a>
+  </div>
+  <!--/.Card image-->
 
-                  <div class="panel-body" *ngFor="let repo of repos">
-
-
-
-                    {{repo.name}} <a href="{{repo.html_url}}" target="_blank"
-                      class="btn btn-sm btn-warning pull-right">View
-                      this project on github</a>
+  <!--Card content-->
+  <div class="card-body card-body-cascade">
+    <h5 class="pink-text"><i class="fab fa-github-alt"></i> {{user.login}}</h5>
+    <!--Title-->
+    <h4 class="card-title"></h4>
+    <!--Text-->
+    <p class="card-text">{{user.bio}}</p>
+    <a class="btn btn-unique waves-effect waves-light" href="{{ user.html_url}}" target="_blank" class="btn btn-success btn-sm">View profile on github</a>
+    
+  </div>
+  <!--/.Card content-->
 
 </div>
+          </div>
+
+          <div class="col-sm-5">
+
+            <ul class="list-group">
+
+              <li class="list-group-item">{{user.bio}}</li>
+
+              <li class="list-group-item">Available for hire</li>
+
+
+            </ul>
+
+          </div>
+
+          <div class="col-sm-4">
+
+            <div>
+
+              <p>
+                <button type="button" class="btn btn-primary btn-rounded">{{user.followers}} Followers</button><br>
+                <button type="button" class="btn btn-default btn-rounded">Following {{user.following}}</button><br>
+                 <button type="button" class="btn btn-secondary btn-rounded">{{user.created_at}}</button>
+                <button type="button" class="btn btn-secondary btn-rounded">{{user.public_repos}} Public Repos</button><br>
+
+               
+              </p>
+
+              <p><a href="{{ user.html_url}}" target="_blank" class="btn btn-success btn-sm">View profile on
+                  github</a></p>
+
+
+
+
+
+              <h3 class="panel-title">Repository</h3>
+
+
+
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  
+
+</div>
+

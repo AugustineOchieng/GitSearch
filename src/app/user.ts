@@ -10,6 +10,7 @@ export class User {
     public following: number,
     public followers: number,
     public location: string,
-    public hireable: string
+    public hireable: string,
+    public_gists:string
   ) {}
 }

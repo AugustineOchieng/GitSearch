@@ -11,6 +11,7 @@ import { ProfilesService } from './profile/profiles.service';
 import { FormsModule } from '@angular/forms';
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpModule } from '@ngx-progressbar/http';
+import { DateCountPipe } from './date-count.pipe';
 
 
 
@@ -24,6 +25,7 @@ const routes: Routes = [
     AppComponent,
     SearchComponent,
     NavbarComponent,
+    DateCountPipe,
   
 
   ],

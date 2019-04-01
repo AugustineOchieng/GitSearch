@@ -20,7 +20,7 @@ export class RepositoriesService {
  
 
   constructor(public http: HttpClient) {
-    this.user = new User("", "", "", "", "", "", 0, 0, 0, "", "");
+    this.user = new User("", "", "", "", "", "", 0, 0, 0, "", "","");
     this.repo = new Repository();
     this.username = "AugustineOchieng"
   }
