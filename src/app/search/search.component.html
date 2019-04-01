@@ -1,131 +1,84 @@
-<!-- <nav class="navbar navbar-dark default-color">
-  <form class="form-inline">
-    <div class="md-form input-group my-0">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon11">@</span>
-      </div>
-      <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-        aria-describedby="basic-addon11">
-    </div>
-  </form>
-</nav> -->
-<h3 class="title">GitSearcher</h3>
-
-
-<br>
 
 <div class="container">
-
-  <form action="" class="search-form">
-
-    <div class="form-group">
-
-      <span class="input">
-
-        <input type="text" class="form-control" placeholder="Insert Username here" [(ngModel)]="username"
-          name="username" (keyup)="findProfile()">
-
-      </span>
-
-
-
-    </div>
-
+<ng-progress></ng-progress>
+  <form>
+ <form class="form-inline md-form mr-auto mb-4">
+   <input class="form-control mr-sm-2" type="text" placeholder="Search" [(ngModel)]="username" aria-label="Search"
+     name="username">
   </form>
 
-  <div *ngIf="profile">
+<a class="btn-floating btn-lg btn-floating peach-gradient" (click)='searcher()'><i class="fas fa-search"></i></a>
 
-    <div class="panel panel-default">
+<div class="panel panel-default">
 
-      <div class="panel-heading">
+  <div class="panel-heading">
 
-        {{profile.name}} <small>({{profile.login}})</small>
+    <button class="btn aqua-gradient">{{user.name}} <small>{{user.login}}</small></button>
 
-        <span *ngIf="profile.company">, Works at {{profile.company}}</span>
 
-        {{profile.location}}
 
+    {{user.location}}
+
+  </div>
+
+  <div class="panel-body">
+
+    <div class="row">
+
+      <div class="col-sm-3">
+
+
+        <div class="card card-cascade narrower">
+
+          <div class="view view-cascade">
+            <img src="{{user.avatar_url}}" class="card-img-top" alt="photo">
+            <a>
+              <div class="mask img-gradient"></div>
+            </a>
+          </div>
+
+
+
+          <div class="card-body card-body-cascade">
+            <h5> {{user.login}}</h5>
+
+
+            <h4 class="card-title"></h4>
+
+            <p class="card-text">{{user.bio}}</p>
+            <a class="btn btn-unique waves-effect waves-light" href="{{ user.html_url}}" target="_blank"
+              class="btn btn-success btn-sm">View profile on github</a>
+
+          </div>
+
+
+        </div>
       </div>
+                    <p>
+                      <button type="button" class="btn btn-primary btn-rounded">{{user.followers}}
+                        Followers</button><br>
+                      <button type="button" class="btn btn-default btn-rounded">Following
+                        {{user.following}}</button><br>
+                      <button type="button" class="btn btn-secondary btn-rounded">{{user.public_gists}} Public
+                        gists</button><br>
+                      <button type="button" class="btn btn-secondary btn-rounded">{{user.public_repos}} Public
+                        Repos</button><br>
 
-      <div class="panel-body">
 
-        <div class="row">
-
-          <div class="col-sm-3">
-
-            <img src="{{profile.avatar_url}}" class="img-circle img-responsive" alt="Profile Image">
-
-          </div>
-
-          <div class="col-sm-5">
-
-            <ul class="list-group">
-
-              <li class="list-group-item" *ngIf="profile.bio">{{profile.bio}}</li>
-
-              <li class="list-group-item" *ngIf="profile.hireable">Available for hire</li>
-
-              <li class="list-group-item" *ngIf="profile.blog"><a href="{{profile.blog}}"
-                  target="_blank">{{profile.blog}}</a></li>
-
-              <li class="list-group-item" *ngIf="profile.email"><a
-                  href="emailto:{{profile.email}}">{{profile.email}}</a></li>
-
-            </ul>
-
-          </div>
-
-          <div class="col-sm-4">
-
-            <div>
-
-              <p>
-
-                <span class="label label-default">{{profile.followers}} Followers</span>
-
-                <span class="label label-primary">Following {{profile.following}}</span>
-
-                <span class="label label-success">{{profile.public_gists}} Public gists</span>
-
-                <span class="label label-info">{{profile.public_repos}} Public Repos</span>
-
-              </p>
-
-              <p><a href="{{profile.html_url}}" target="_blank" class="btn btn-success btn-sm">View profile on
-                  github</a></p>
-
-          
-
-            
+                    </p>
+<p><a href="{{ user.html_url}}" target="_blank" class="btn btn-success btn-sm">View profile on
+    github</a></p>
 
                   <h3 class="panel-title">Repository</h3>
 
-                
 
-                <div class="panel-body" *ngFor="let repo of repos">
 
-                  
+                  <div class="panel-body" *ngFor="let repo of repos">
+
+
 
                     {{repo.name}} <a href="{{repo.html_url}}" target="_blank"
-                      class="btn btn-sm btn-warning pull-right">View this project on github</a>
-
-                
-
-                 
-
-                </div>
-
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
+                      class="btn btn-sm btn-warning pull-right">View
+                      this project on github</a>
 
 </div>
