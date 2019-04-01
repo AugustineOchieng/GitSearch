@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
-  apiUrl:"https://api.github.com/users/",
-  access_token:"?access_token=d5312bfa34a4a4a806bab9de7729aeb4840fabb0  "
+  apiUrl: "https://api.github.com/users/",
+  access_token: "?access_token=d5312bfa34a4a4a806bab9de7729aeb4840fabb0  "
+}
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
@@ -13,4 +14,4 @@ export const environment = {
  * This import should be commented out in production mode because it will have a negative impact
  * on performance if an error is thrown.
  */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+// import 'zone.js/dist/zone-error';  

@@ -1,23 +1,40 @@
 import { Injectable } from '@angular/core';
-// import { Http, Headers } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
+import { User } from '../user';
+import { Repository } from '../repository';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class RepositoriesService {
-  private username: string;
-  private clientid = 'ec51023e47694c2cb4a9';
-  private clientsecret = '2eb08d690c48951f82d92bb1f67ff5d6a165591b';
+  user: User;
+  repo: Repository;
+  public username: string;
+  
 
  
 
-  // constructor(private http: Http) {
-  //   this.username = 'bertocarl';
-  // }
+  constructor(public http: HttpClient) {
+    this.user = new User("","","","","","","0","0","","","");
+    this.repo = new Repository();
+    this.username = "AugustineOchieng"
+  }
+  getInfo() {
+    interface UserInfo{
+      login: string;
+      html_url: any;
+      avatar_url: string;
+      public_repos: any;
+      repo_url: any;
+      bio: any;
+      created_at: number, public following: number, public followers: number, public location: string, hireable: string
+    }
+  }
 
-  //  getRepositoryRepos() {
-  //    return this.http.get('https://api.github.com/users/' + this.username + '/repos?client_id=' + this.clientid + '&client_secret=' + this.clientsecret)
-  //      .map(res => res.json());
-  //  }
+   getRepositoryRepos() {
+     return this.http.get<Userinfo>()
+       .map(res => res.json());
+   }
    }
 
