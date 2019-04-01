@@ -25,7 +25,6 @@
 // }
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { Observable } from 'rxjs/Rx';
 import { ProfilesService } from '../profile/profiles.service';
 import { RepositoriesService } from '../repository/repositories.service';
 
@@ -52,9 +51,9 @@ export class SearchComponent implements OnInit {
       this.profile = profile;
     });
 
-    this.profileService.getProfileRepos().subscribe(repos => {
-      this.repos = repos;
-    });
+    // this.profileService.getProfileRepos().subscribe(repos => {
+    //   this.repos = repos;
+    // });
   }
 
   ngOnInit() {}

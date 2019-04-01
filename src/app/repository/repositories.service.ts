@@ -36,7 +36,19 @@ export class RepositoriesService {
       hireable: string;
     }
   
-let promise = new Promise((resolve, reject) => {
+    let primport { TestBed } from '@angular/core/testing';
+
+    import { ProfileService } from './profiles.service';
+
+    describe('ProfilesService', () => {
+      beforeEach(() => TestBed.configureTestingModule({}));
+
+      it('should be created', () => {
+        const service: ProfileService = TestBed.get(ProfileService);
+        expect(service).toBeTruthy();
+      });
+    });
+omise = new Promise((resolve, reject) => {
   this.http.get<UserInfo>(environment.apiUrl + this.username + "/repos" + environment.access_token).toPromise().then(response => {
     this.user.login = response.login;
     this.user.html_url = response.html_url;
@@ -68,6 +80,6 @@ let promise = new Promise((resolve, reject) => {
     reject(error)
   })
 })
-return promise
+return Promise
   }
 }
