@@ -1,19 +1,29 @@
 <body>
-<nav class="navbar navbar-inverse dusty-grass-gradient">
+<nav class="navbar navbar-inverse dusty-grass-gradient fixed-top ">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
 
       <a class="navbar-brand" id="fonty" href="#"><i class="fab fa-github-alt"></i>GitSearch</a>
     </div>
+    <header></header>
     <form class="form-inline">
       <div class="md-form input-group my-0">
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon11">@</span>
+          <ul class="navbar-nav ml-auto nav-flex-icons">
+            <li class="nav-item avatar">
+              <a class="nav-link p-0" href="#">
+                
+              </a>
+              <img src="{{user.avatar_url}}" class="rounded-circle z-depth-0" alt="avatar image" height="40">
+            </li>
+          </ul>
         </div>
         <input type="text" class="form-control" placeholder={{user.login}} aria-label="Username"
           aria-describedby="basic-addon11">
       </div>
+      
     </form>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -27,7 +37,7 @@
   </div>
 </nav>
 <ng-progress></ng-progress>
-<header></header>
+
 <br>
 
 <div class="container">
