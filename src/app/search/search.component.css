@@ -1,4 +1,36 @@
 body{
 background-color: #91d370;
+
+font-family: 'Pompiere',
+cursive;
+font-size: 30px;
 background-image: linear-gradient(319deg, #91d370 0%, #bca0ff 37%, #f2cd54 100%);
 }
+header {
+  position: relative;
+}
+
+header:after {
+  content: '';
+  border-radius: 40px;
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, -50%);
+  background-image:url("https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/modules/git-and-git-hub-basics/18ac221379d887006bf95555ad307e05_badge.png");
+  background-size: cover;
+  background-position: center;
+  background-color: #91d370;
+}
+#fonty{
+  font-family: 'Audiowide',
+  cursive;
+
+}
+#basic-addon11{
+font-family: 'Major Mono Display',
+monospace;
+}
+

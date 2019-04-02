@@ -4,7 +4,7 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
 
-      <a class="navbar-brand" href="#">GitSearch</a>
+      <a class="navbar-brand" id="fonty" href="#"><i class="fab fa-github-alt"></i>GitSearch</a>
     </div>
     <form class="form-inline">
       <div class="md-form input-group my-0">
@@ -27,7 +27,7 @@
   </div>
 </nav>
 <ng-progress></ng-progress>
-
+<header></header>
 <br>
 
 <div class="container">
@@ -87,7 +87,7 @@
 
   <!--Card content-->
   <div class="card-body card-body-cascade">
-    <h5 class="pink-text"><i class="fab fa-github-alt"></i> {{user.login}}</h5>
+    <h5 class="green-text"><i class="fab fa-github-alt"></i> {{user.login}}</h5>
     <!--Title-->
     <h4 class="card-title"></h4>
     <!--Text-->
@@ -109,39 +109,46 @@
               <li class="list-group-item">Available for hire</li>
 
 
+  <h4>Public Repositories for <em>{{user.login}}</em>
+  </h4>
+
+  <div *ngFor='let reps of repo'>
+
+    <p class="clearfix "> {{reps.name}}<a href="{{reps.html_url}}" target="_blank"
+        class="btn btn-warning float-right">View Repository on Github</a></p>
+
+    <p>{{reps.description}}</p>
+
+
+
+
+
+  </div>
+
+
             </ul>
 
           </div>
 
           <div class="col-sm-4">
 
-            <div>
+            
 
               <p>
                 <button type="button" class="btn btn-primary btn-rounded">{{user.followers}} Followers</button><br>
                 <button type="button" class="btn btn-default btn-rounded">Following {{user.following}}</button><br>
-                 <button type="button" class="btn btn-secondary btn-rounded">{{user.created_at}}</button>
+                
                 <button type="button" class="btn btn-secondary btn-rounded">{{user.public_repos}} Public Repos</button><br>
-
+<button type="button" class="btn btn-secondary btn-rounded">Member since:{{user.created_at}}</button>
                
               </p>
 
               <p><a href="{{ user.html_url}}" target="_blank" class="btn btn-success btn-sm">View profile on
                   github</a></p>
+              </div>
 
 
-
-
-
-              <h3 class="panel-title">Repository</h3>
-
-
-
-
-
-            </div>
-
-          </div>
+            
 
         </div>
 
@@ -152,4 +159,5 @@
   
 
 </div>
+</body>
 
