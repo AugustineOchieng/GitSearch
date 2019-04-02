@@ -1,10 +1,54 @@
 # GitSearch
 
+#### GitSeaarch is a simple search application that relays repositiories and Github users at lightning fast speed.
+
+Current Version 02/04/2019
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+#### By **Augustine Ochieng**
+
+## Description
+
+GitSeaarch is a simple search application that relays repositiories and Github users at lightning fast speed
+
+## Setup/Installation Requirements
+
+- Type in Github username
+- View repositories
+
+## Known Bugs
+
+There are currently no known bugs but in case of any inconvenience experienced reach out to me through my email address: gusochieng@gmail.com
+
+## Technologies Used
+
+- HTML
+- CSS
+- Google Fonts
+- Coolors.co
+- Typescript
+- Angular
+- Material Design Bootstrap
+
+## Support and contact details
+
+Everyone interested is most welcome to fork this code and modify it for updates. In case of any inconvenience experienced reach out to me through my email address: gusochieng@gmail.com
+
+## Behaviour Driven Development
+
+| Expected Behaviour            | Input                                 | Output                                 |
+| ----------------------------- | ------------------------------------- | -------------------------------------- |
+| Accept name                   | Github username                       | Show existing Github Usernames of same |
+| Display User and Repositories | Existing users and Repositories shown | Access repositories                    |
+
+## Deployed Link
+
+To check out and try out the application click upon this link https://augustineochieng.github.io/Quotes/
 
 ## Code scaffolding
 
